@@ -1,0 +1,89 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.08.28",
+  "_id": "S8R7SKABxUJE-vWjB88w",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.100.52",
+      "name": "windows-pc",
+      "id": "002"
+    },
+    "manager": {
+      "name": "azer-VirtualBox"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "image": "C:\\\\WINDOWS\\\\system32\\\\services.exe",
+          "targetObject": "HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\PimIndexMaintenanceSvc_457c9\\\\ImagePath",
+          "processGuid": "{e4e8646b-87a0-6a91-0b00-000000001a00}",
+          "processId": "912",
+          "utcTime": "2026-08-28 13:05:53.326",
+          "ruleName": "T1031,T1050",
+          "details": "C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup",
+          "eventType": "SetValue",
+          "user": "NT AUTHORITY\\\\SYSTEM"
+        },
+        "system": {
+          "eventID": "13",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Registry value set:\r\nRuleName: T1031,T1050\r\nEventType: SetValue\r\nUtcTime: 2026-08-28 13:05:53.326\r\nProcessGuid: {e4e8646b-87a0-6a91-0b00-000000001a00}\r\nProcessId: 912\r\nImage: C:\\WINDOWS\\system32\\services.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\PimIndexMaintenanceSvc_457c9\\ImagePath\r\nDetails: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup\r\nUser: NT AUTHORITY\\SYSTEM\"",
+          "version": "2",
+          "systemTime": "2026-08-28T13:06:52.2850516Z",
+          "eventRecordID": "33658",
+          "threadID": "6416",
+          "computer": "windows-11",
+          "task": "13",
+          "processID": "5492",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 18,
+      "mail": false,
+      "level": 3,
+      "description": "Evidence of new service creation found in registry under HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\PimIndexMaintenanceSvc_457c9\\\\ImagePath binary is: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup",
+      "groups": [
+        "sysmon",
+        "sysmon_eid13_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Windows Service"
+        ],
+        "id": [
+          "T1543.003"
+        ],
+        "tactic": [
+          "Persistence",
+          "Privilege Escalation"
+        ]
+      },
+      "id": "92307"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1787922416.658469",
+    "timestamp": "2026-08-28T14:06:56.131+0100"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-08-28T13:06:56.131Z"
+    ]
+  },
+  "sort": [
+    1787922416131
+  ]
+}

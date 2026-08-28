@@ -1,0 +1,101 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.08.28",
+  "_id": "UsR7SKABxUJE-vWjFs8a",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.100.52",
+      "name": "windows-pc",
+      "id": "002"
+    },
+    "manager": {
+      "name": "azer-VirtualBox"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "Cmd.Exe",
+          "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{e4e8646b-87b8-6a91-5900-000000001a00}",
+          "description": "Windows Command Processor",
+          "logonGuid": "{e4e8646b-87af-6a91-c31f-040000000000}",
+          "parentCommandLine": "runonce.exe /Explorer",
+          "processGuid": "{e4e8646b-87be-6a91-7200-000000001a00}",
+          "logonId": "0x41fc3",
+          "parentProcessId": "4636",
+          "processId": "5796",
+          "currentDirectory": "C:\\\\WINDOWS\\\\system32\\\\",
+          "utcTime": "2026-08-28 13:06:06.738",
+          "hashes": "MD5=E463E36104D22A2479046A7D4F620816,SHA256=8DD1EBB0B969370C70A5EE7F7EE347949AA7046AA5E1A33FCD7B1E9415B21FC3,IMPHASH=010B165E4C37F484601D3DBD700C9423",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\runonce.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "\\\"C:\\\\Windows\\\\System32\\\\cmd.exe\\\" /q /c del /q \\\"C:\\\\Program Files\\\\Microsoft OneDrive\\\\Update\\\\OneDriveSetup.exe\\\"",
+          "integrityLevel": "High",
+          "fileVersion": "10.0.26100.8972 (WinBuild.160101.0800)",
+          "user": "WINDOWS-11\\\\vboxuser",
+          "terminalSessionId": "1",
+          "parentUser": "WINDOWS-11\\\\vboxuser"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-08-28 13:06:06.738\r\nProcessGuid: {e4e8646b-87be-6a91-7200-000000001a00}\r\nProcessId: 5796\r\nImage: C:\\Windows\\System32\\cmd.exe\r\nFileVersion: 10.0.26100.8972 (WinBuild.160101.0800)\r\nDescription: Windows Command Processor\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: Cmd.Exe\r\nCommandLine: \"C:\\Windows\\System32\\cmd.exe\" /q /c del /q \"C:\\Program Files\\Microsoft OneDrive\\Update\\OneDriveSetup.exe\"\r\nCurrentDirectory: C:\\WINDOWS\\system32\\\r\nUser: WINDOWS-11\\vboxuser\r\nLogonGuid: {e4e8646b-87af-6a91-c31f-040000000000}\r\nLogonId: 0x41FC3\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=E463E36104D22A2479046A7D4F620816,SHA256=8DD1EBB0B969370C70A5EE7F7EE347949AA7046AA5E1A33FCD7B1E9415B21FC3,IMPHASH=010B165E4C37F484601D3DBD700C9423\r\nParentProcessGuid: {e4e8646b-87b8-6a91-5900-000000001a00}\r\nParentProcessId: 4636\r\nParentImage: C:\\Windows\\System32\\runonce.exe\r\nParentCommandLine: runonce.exe /Explorer\r\nParentUser: WINDOWS-11\\vboxuser\"",
+          "version": "5",
+          "systemTime": "2026-08-28T13:06:53.7065169Z",
+          "eventRecordID": "33711",
+          "threadID": "6416",
+          "computer": "windows-11",
+          "task": "1",
+          "processID": "5492",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": false,
+      "level": 4,
+      "description": "Windows command prompt started by an abnormal process",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1059.003"
+        ],
+        "tactic": [
+          "Execution"
+        ]
+      },
+      "id": "92052"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1787922419.679899",
+    "timestamp": "2026-08-28T14:06:59.188+0100"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-08-28T13:06:59.188Z"
+    ]
+  },
+  "sort": [
+    1787922419188
+  ]
+}
